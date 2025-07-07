@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import Header from '@/components/Header';
-import GenerativeBackground from '@/components/GenerativeBackground';
 import ReactMarkdown from 'react-markdown';
 
 interface Post {
@@ -47,8 +46,7 @@ export default function PostPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-black relative">
-        <GenerativeBackground variant="waves" />
+      <div className="min-h-screen bg-black">
         <Header />
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-4xl mx-auto">
@@ -65,8 +63,7 @@ export default function PostPage() {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-black relative">
-        <GenerativeBackground variant="waves" />
+      <div className="min-h-screen bg-black">
         <Header />
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-4xl mx-auto">
@@ -85,8 +82,7 @@ export default function PostPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black relative">
-      <GenerativeBackground variant="waves" />
+    <div className="min-h-screen bg-black">
       <Header />
       
       <main className="container mx-auto px-4 py-12">

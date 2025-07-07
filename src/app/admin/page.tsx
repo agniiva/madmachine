@@ -5,7 +5,6 @@ import { supabase } from '@/lib/supabase';
 import { Auth } from '@supabase/auth-ui-react';
 import { ThemeSupa } from '@supabase/auth-ui-shared';
 import Header from '@/components/Header';
-import GenerativeBackground from '@/components/GenerativeBackground';
 import dynamic from 'next/dynamic';
 import type { Session } from '@supabase/supabase-js';
 
@@ -145,8 +144,7 @@ export default function AdminPage() {
 
   if (!session) {
     return (
-      <div className="min-h-screen bg-black relative">
-        <GenerativeBackground variant="grid" />
+      <div className="min-h-screen bg-black">
         <Header />
         <div className="container mx-auto px-4 py-6 sm:py-12">
           <div className="max-w-md mx-auto">
@@ -200,8 +198,7 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black relative">
-      <GenerativeBackground variant="particles" />
+    <div className="min-h-screen bg-black">
       <Header />
       <div className="container mx-auto px-4 py-6 sm:py-12">
         <div className="max-w-4xl mx-auto">

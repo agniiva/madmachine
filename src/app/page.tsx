@@ -1,5 +1,4 @@
 import Header from '@/components/Header';
-import GenerativeBackground from '@/components/GenerativeBackground';
 import { supabase } from '@/lib/supabase';
 
 export default async function Home() {
@@ -10,8 +9,7 @@ export default async function Home() {
     .order('created_at', { ascending: false });
 
   return (
-    <div className="min-h-screen bg-black relative">
-      <GenerativeBackground variant="matrix" />
+    <div className="min-h-screen bg-black">
       <Header />
       
       <main className="container mx-auto px-4 py-12">
