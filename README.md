@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# madmachines // digital thoughts
 
-## Getting Started
+A minimal ASCII-themed blog built with Next.js 14, TypeScript, Tailwind CSS, and Supabase.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- 🎨 Minimal ASCII/terminal aesthetic with ethereal green glow
+- 📱 Responsive design optimized for all devices
+- 🔐 Authentication system with Supabase Auth
+- 📝 Admin panel for creating and managing blog posts
+- 🚀 Optimized for SEO with meta tags, sitemap, and robots.txt
+- ⚡ Fast performance with Next.js 14 and server components
+- 🌐 Ready for deployment on Vercel
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone the repository**
+   ```bash
+   cd madmachines-blog
+   npm install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Set up Supabase**
+   - Create a new project at [supabase.com](https://supabase.com)
+   - Run the SQL from `database.sql` in your Supabase SQL editor
+   - Update `.env.local` with your Supabase credentials
 
-## Learn More
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+4. **Access the application**
+   - Blog: `http://localhost:3000`
+   - Admin: `http://localhost:3000/admin`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Database Schema
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The blog uses a simple `posts` table with the following fields:
+- `id`: UUID primary key
+- `title`: Post title
+- `content`: Post content (markdown supported)
+- `excerpt`: Short description
+- `slug`: URL-friendly identifier
+- `published`: Boolean flag
+- `created_at`: Timestamp
+- `updated_at`: Timestamp (auto-updated)
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Vercel (Recommended)
+1. Connect your GitHub repository to Vercel
+2. Add environment variables in Vercel dashboard:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+3. Deploy automatically on push
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Alternative Deployments
+- **Netlify**: Use `npm run build` and deploy the `out` folder
+- **Cloudflare Pages**: Connect repository and configure build settings
+
+## Tech Stack
+
+- **Frontend**: Next.js 14, TypeScript, Tailwind CSS
+- **Backend**: Supabase (PostgreSQL + Auth)
+- **Font**: JetBrains Mono
+- **Deployment**: Vercel
+- **Styling**: Custom ASCII/terminal theme with green glow effects
+
+## Design Philosophy
+
+The blog embraces minimalism with an ASCII/terminal aesthetic, featuring:
+- Monospace typography (JetBrains Mono)
+- Green-on-black color scheme
+- Subtle borders and glow effects
+- ASCII art elements
+- Terminal-inspired UI components
+
+Perfect for developers, writers, and thinkers who appreciate the beauty of simplicity and the elegance of the command line.
